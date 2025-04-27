@@ -40,12 +40,14 @@
       know about them.  */
    enum yytokentype {
      A = 258,
-     B = 259
+     B = 259,
+     C = 260
    };
 #endif
 /* Tokens.  */
 #define A 258
 #define B 259
+#define C 260
 
 
 
