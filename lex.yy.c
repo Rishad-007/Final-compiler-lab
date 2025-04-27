@@ -361,10 +361,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[13] =
+static const flex_int16_t yy_accept[19] =
     {   0,
-        0,    0,    4,    2,    2,    0,    0,    0,    0,    0,
-        1,    0
+        0,    0,    4,    2,    2,    2,    2,    2,    1,    0,
+        1,    0,    0,    0,    0,    0,    0,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -373,15 +373,15 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    3,    1,    3,    4,    1,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    6,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    3,    4,    1,    1,
 
-        6,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        5,    1,    6,    1,    7,    1,    1,    1,    8,    9,
+        1,    1,    1,   10,   11,    1,    1,    1,   12,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -399,35 +399,40 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[7] =
+static const YY_CHAR yy_meta[13] =
     {   0,
-        1,    1,    1,    1,    2,    1
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1
     } ;
 
-static const flex_int16_t yy_base[16] =
+static const flex_int16_t yy_base[19] =
     {   0,
-        9,    8,   12,   15,    0,    0,    0,    4,    2,    0,
-        0,   15,    9,    1,    0
+        0,    0,   28,   29,    5,   22,   15,   13,   29,   20,
+       14,   13,   13,   13,   11,   12,    8,   29
     } ;
 
-static const flex_int16_t yy_def[16] =
+static const flex_int16_t yy_def[19] =
     {   0,
-       13,   13,   12,   12,   12,   14,    5,   12,   14,   15,
-       15,    0,   12,   12,   12
+       18,    1,   18,   18,   18,   18,   18,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,    0
     } ;
 
-static const flex_int16_t yy_nxt[22] =
+static const flex_int16_t yy_nxt[42] =
     {   0,
-       12,   11,    9,    6,    7,    8,   10,    8,   11,    4,
-        4,   12,    5,    5,    3,   12,   12,   12,   12,   12,
-       12
+        4,    4,    5,    6,    4,    4,    7,    4,    4,    4,
+        4,    8,    9,    9,   10,   12,    9,   13,   14,   17,
+       15,    9,   16,    9,    9,    9,   11,   18,    3,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18,
+       18
     } ;
 
-static const flex_int16_t yy_chk[22] =
+static const flex_int16_t yy_chk[42] =
     {   0,
-        0,   15,   14,    5,    5,    5,    8,    9,    8,   13,
-       13,    3,    2,    1,   12,   12,   12,   12,   12,   12,
-       12
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    5,   17,    5,    8,   16,    8,   11,   15,
+       11,   14,   13,   12,   10,    7,    6,    3,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18,
+       18
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -444,11 +449,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "identifyexpotential.l"
-#line 2 "identifyexpotential.l"
+#line 1 "tobeverb.l"
+#line 2 "tobeverb.l"
 #include <stdio.h>
-#line 450 "lex.yy.c"
-#line 451 "lex.yy.c"
+#line 455 "lex.yy.c"
+#line 456 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -665,9 +670,9 @@ YY_DECL
 		}
 
 	{
-#line 5 "identifyexpotential.l"
+#line 5 "tobeverb.l"
 
-#line 670 "lex.yy.c"
+#line 675 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -694,13 +699,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 13 )
+				if ( yy_current_state >= 19 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 15 );
+		while ( yy_base[yy_current_state] != 29 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -726,25 +731,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 6 "identifyexpotential.l"
+#line 6 "tobeverb.l"
 { 
-    printf("Exponential number found: %s\n", yytext); 
+    printf("To be verb found: %s\n", yytext); 
 }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 9 "identifyexpotential.l"
+#line 9 "tobeverb.l"
 { 
     /* Ignore other characters */ 
 }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "identifyexpotential.l"
+#line 12 "tobeverb.l"
 ECHO;
 	YY_BREAK
-#line 747 "lex.yy.c"
+#line 752 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1041,7 +1046,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 13 )
+			if ( yy_current_state >= 19 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1069,11 +1074,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 13 )
+		if ( yy_current_state >= 19 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 12);
+	yy_is_jam = (yy_current_state == 18);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1749,7 +1754,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 12 "identifyexpotential.l"
+#line 12 "tobeverb.l"
 
 
 int main() {
