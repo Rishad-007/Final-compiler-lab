@@ -352,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 6
-#define YY_END_OF_BUFFER 7
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -361,9 +361,9 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[10] =
+static const flex_int16_t yy_accept[11] =
     {   0,
-        0,    0,    7,    5,    4,    1,    2,    3,    0
+        0,    0,    6,    4,    3,    4,    4,    2,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -372,12 +372,12 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    3,    1,    1,    1,    1,    4,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    3,    4,    5,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,31 +398,33 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[6] =
+static const YY_CHAR yy_meta[5] =
     {   0,
-        1,    1,    1,    1,    1
+        1,    1,    2,    3
     } ;
 
-static const flex_int16_t yy_base[10] =
+static const flex_int16_t yy_base[13] =
     {   0,
-        0,    0,    6,    7,    7,    7,    7,    7,    7
+        0,    0,    7,    8,    8,    0,    0,    8,    8,    8,
+        3,    3
     } ;
 
-static const flex_int16_t yy_def[10] =
+static const flex_int16_t yy_def[13] =
     {   0,
-        9,    1,    9,    9,    9,    9,    9,    9,    0
+       10,    1,   10,   10,   10,   11,   12,   10,   10,    0,
+       10,   10
     } ;
 
 static const flex_int16_t yy_nxt[13] =
     {   0,
-        4,    5,    6,    7,    8,    9,    3,    9,    9,    9,
-        9,    9
+        4,    5,    6,    7,    9,    8,   10,    3,   10,   10,
+       10,   10
     } ;
 
 static const flex_int16_t yy_chk[13] =
     {   0,
-        1,    1,    1,    1,    1,    3,    9,    9,    9,    9,
-        9,    9
+        1,    1,    1,    1,   12,   11,    3,   10,   10,   10,
+       10,   10
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -439,12 +441,15 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "abcnm.l"
-#line 2 "abcnm.l"
-#include "y.tab.h"
-int yywrap() { return 1; }
-#line 446 "lex.yy.c"
-#line 447 "lex.yy.c"
+#line 1 "removeCcomments.l"
+#line 2 "removeCcomments.l"
+#include <stdio.h>
+int comment_lines = 0;
+int in_comment = 0;
+int current_line = 1;
+FILE *output_file;
+#line 451 "lex.yy.c"
+#line 452 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -661,9 +666,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "abcnm.l"
+#line 9 "removeCcomments.l"
 
-#line 666 "lex.yy.c"
+#line 671 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -690,13 +695,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 10 )
+				if ( yy_current_state >= 11 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 7 );
+		while ( yy_base[yy_current_state] != 8 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -722,36 +727,47 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "abcnm.l"
-{ return A; }
+#line 10 "removeCcomments.l"
+{ 
+    if (!in_comment) {
+        in_comment = 1; 
+        comment_lines++;  // Count the start line of the comment
+    }
+}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "abcnm.l"
-{ return B; }
+#line 16 "removeCcomments.l"
+{ 
+    if (in_comment) {
+        in_comment = 0; 
+    }
+}
 	YY_BREAK
 case 3:
+/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 9 "abcnm.l"
-{ return C; }
+#line 21 "removeCcomments.l"
+{ 
+    current_line++; 
+    if (in_comment) comment_lines++; 
+}
 	YY_BREAK
 case 4:
-/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 10 "abcnm.l"
-{ return 0; }
+#line 25 "removeCcomments.l"
+{ 
+    if (!in_comment) {
+        fprintf(output_file, "%s", yytext); 
+    }
+}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 11 "abcnm.l"
-{ printf("Invalid character: %s\n", yytext); exit(1); }
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 12 "abcnm.l"
+#line 30 "removeCcomments.l"
 ECHO;
 	YY_BREAK
-#line 754 "lex.yy.c"
+#line 770 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1048,7 +1064,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 10 )
+			if ( yy_current_state >= 11 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1076,11 +1092,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 10 )
+		if ( yy_current_state >= 11 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 9);
+	yy_is_jam = (yy_current_state == 10);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1756,5 +1772,37 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 12 "abcnm.l"
+#line 30 "removeCcomments.l"
 
+
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Usage: %s input_file.c output_file.c\n", argv[0]);
+        return 1;
+    }
+
+    yyin = fopen(argv[1], "r");
+    if (!yyin) {
+        perror("Error opening input file");
+        return 1;
+    }
+
+    output_file = fopen(argv[2], "w");
+    if (!output_file) {
+        perror("Error opening output file");
+        fclose(yyin);
+        return 1;
+    }
+
+    yylex();
+
+    printf("Total comment lines: %d\n", comment_lines);
+
+    fclose(yyin);
+    fclose(output_file);
+    return 0;
+}
+
+int yywrap() {
+    return 1;
+}
