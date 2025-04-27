@@ -44,3 +44,8 @@ int main() {
     }
     return 0;
 }
+
+/* yacc -d abcnm.y
+lex abcnm.l
+cc lex.yy.c y.tab.c -o abcnm -lfl
+./abcnm */
