@@ -352,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 5
-#define YY_END_OF_BUFFER 6
+#define YY_NUM_RULES 6
+#define YY_END_OF_BUFFER 7
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -363,7 +363,7 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[11] =
     {   0,
-        0,    0,    6,    4,    3,    2,    2,    1,    1,    0
+        0,    0,    7,    5,    3,    4,    2,    1,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -441,13 +441,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "evaluatecalculator.l"
-#line 2 "evaluatecalculator.l"
-#include <stdlib.h>
+#line 1 "arithmeticexpression.l"
+#line 2 "arithmeticexpression.l"
 #include "y.tab.h"
-void yyerror(char *);
+extern void yyerror(const char *s);
+#line 448 "lex.yy.c"
 #line 449 "lex.yy.c"
-#line 450 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -664,10 +663,10 @@ YY_DECL
 		}
 
 	{
-#line 7 "evaluatecalculator.l"
+#line 6 "arithmeticexpression.l"
 
 
-#line 670 "lex.yy.c"
+#line 669 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -726,31 +725,36 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "evaluatecalculator.l"
+#line 8 "arithmeticexpression.l"
 { yylval = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 2:
-/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 10 "evaluatecalculator.l"
+#line 9 "arithmeticexpression.l"
 { return yytext[0]; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 11 "evaluatecalculator.l"
+#line 10 "arithmeticexpression.l"
 ; /* skip whitespace */
 	YY_BREAK
 case 4:
+/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 12 "evaluatecalculator.l"
-{ yyerror("Invalid character"); }
+#line 11 "arithmeticexpression.l"
+{ return '\n'; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "evaluatecalculator.l"
+#line 12 "arithmeticexpression.l"
+{ yyerror("Invalid character"); return 0; }
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 14 "arithmeticexpression.l"
 ECHO;
 	YY_BREAK
-#line 753 "lex.yy.c"
+#line 757 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1755,9 +1759,9 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 14 "evaluatecalculator.l"
+#line 14 "arithmeticexpression.l"
 
 
-int yywrap(void) {
+int yywrap() {
     return 1;
 }
