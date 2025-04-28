@@ -1,11 +1,8 @@
-#include <stdio.h>
-
-/* This is a multi-line
-   comment spanning
-   three lines */
-
-int main() {
-    // This is a single-line comment
-    printf("Hello, World!\n"); /* Inline comment */
-    return 0;
+cat > input.c << 'EOF'
+for(i=0; i<10; i++) {
+    for(j=0; j<5; j++) {
+        for(k=0; k<3; k++) {
+        }
+    }
 }
+EOF
